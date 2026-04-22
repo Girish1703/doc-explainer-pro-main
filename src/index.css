@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KALNET marketing site — clean B2B SaaS, teal-led, Indian education context.
+   Inspired by Linear + Vercel: generous whitespace, sharp typography, one bold accent. */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Surfaces */
+    --background: 210 40% 99%;
+    --foreground: 215 40% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 40% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 40% 12%;
+
+    /* Brand teal — KALNET CTA color */
+    --primary: 178 78% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 174 72% 46%;
+
+    --secondary: 215 40% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 30% 96%;
+    --muted-foreground: 215 16% 42%;
+
+    --accent: 178 70% 95%;
+    --accent-foreground: 178 80% 22%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 90%;
+    --input: 215 25% 90%;
+    --ring: 178 78% 36%;
+
+    --radius: 0.75rem;
+
+    /* Brand gradients & shadows */
+    --gradient-hero: radial-gradient(1000px 500px at 80% -10%, hsl(178 78% 92%) 0%, transparent 60%),
+                     radial-gradient(800px 400px at -10% 20%, hsl(174 72% 94%) 0%, transparent 55%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --shadow-elegant: 0 20px 50px -20px hsl(178 78% 30% / 0.25);
+    --shadow-card: 0 1px 2px hsl(215 40% 12% / 0.04), 0 8px 24px -12px hsl(215 40% 12% / 0.08);
+    --transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 40% 7%;
+    --foreground: 210 40% 98%;
+    --card: 215 40% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 215 40% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 174 72% 46%;
+    --primary-foreground: 215 40% 7%;
+    --primary-glow: 178 78% 56%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 215 40% 7%;
+    --muted: 215 30% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 178 60% 18%;
+    --accent-foreground: 178 70% 85%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 30% 18%;
+    --input: 215 30% 18%;
+    --ring: 174 72% 46%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Sora', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .hero-bg { background: var(--gradient-hero); }
+  .cta-bg { background: var(--gradient-cta); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+}
